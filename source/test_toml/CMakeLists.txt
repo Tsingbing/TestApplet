@@ -1,6 +1,4 @@
-﻿
-#add_subdirectory(toml11)
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/config.toml DESTINATION ${CMAKE_BINARY_DIR})
+﻿file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/config.toml DESTINATION ${CMAKE_BINARY_DIR})
 
 aux_source_directory("./" DIR_SOURCE_SRCS)
 
@@ -11,8 +9,6 @@ add_executable( ${LISIN_MTR1}
                 ${DIR_SOURCE_SRCS}
               )
 
-message(STATUS "SYS_FRAME_H: " ${SYS_FRAME_H})
-
 #头文件包含
 target_include_directories(${LISIN_MTR1} PRIVATE
                            ${THIRLD_LIB_PATH}
@@ -22,4 +18,4 @@ target_include_directories(${LISIN_MTR1} PRIVATE
 #target_link_libraries(${LISIN_MTR1} PUBLIC ${Mqtt_lib})
 
 #执行文件的安装位置
-install(TARGETS ${LISIN_MTR1} RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin)
+#install(TARGETS ${LISIN_MTR1} RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin)
