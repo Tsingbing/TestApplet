@@ -3,17 +3,16 @@
 #include <iostream>
 #include <map>
 #include <vector>
-
+#ifdef _WIN32
+#include <Windows.h>
+#endif
 using namespace std;
 
 int main()
 {
-    //cout << "Hello World!" << endl;
-
-    //    if (!std::filesystem::exists("vehicle_fault.toml")) {
-    //        std::cout << "config.toml not exit" << endl;
-    //        return 0;
-    //    }
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
 
     const auto data = toml::parse<toml::preserve_comments>("vehicle_fault.toml");
 
