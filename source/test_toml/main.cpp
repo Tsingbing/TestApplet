@@ -1,5 +1,5 @@
 ﻿#include "toml11/toml.hpp"
-//#include <filesystem>
+#include <filesystem>
 #include <iostream>
 #include <map>
 #include <vector>
@@ -13,8 +13,16 @@ int main()
 #ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
 #endif
+    std::string filename = "vehicle_fault.toml";
 
-    const auto data = toml::parse<toml::preserve_comments>("vehicle_fault.toml");
+    if (std::filesystem::exists(filename)) {
+        std::cout << "File exists." << std::endl;
+    } else {
+        std::cout << "File does not exist." << std::endl;
+        std::exit(EXIT_FAILURE);
+    }
+
+    const auto data = toml::parse<toml::preserve_comments>(filename);
 
     std::map<int, std::string> faultCodeAndName; //存储maincode和故障名
 
