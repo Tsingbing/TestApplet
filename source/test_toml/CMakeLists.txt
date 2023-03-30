@@ -10,8 +10,10 @@ add_executable( ${LISIN_MTR1}
               )
 
 #头文件包含
+#添加头文件VehicleFault.h的路径
 target_include_directories(${LISIN_MTR1} PRIVATE
-                           ${THIRLD_LIB_PATH}
+                           ${THIRLD_LIB_PATH} 
+                           ${DIR_SOURCE_SRCS}
                            )
 
 #连接库
