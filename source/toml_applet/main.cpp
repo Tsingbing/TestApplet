@@ -1,8 +1,10 @@
 ﻿#include "./print_cmake.h"
 #include <stdio.h>
 
-int main(void) {
-  print_cmake();
+int main(void)
+{
+    PrintCmake print_cmake;
+    print_cmake.print_cmake_version();
 
-  return 0;
+    return 0;
 }
